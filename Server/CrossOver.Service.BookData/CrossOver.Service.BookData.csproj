@@ -146,6 +146,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\HasnatCustom.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -161,6 +162,10 @@
     <ProjectReference Include="..\..\Common\Models\CrossOver.CodeLibrary.DataLayer\CrossOver.DataAccessLayer.DBModel.csproj">
       <Project>{3c848702-42ca-46b2-a325-5eeb67cde8a9}</Project>
       <Name>CrossOver.DataAccessLayer.DBModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\Models\CrossOver.DataLayer.Models\CrossOver.DataLayer.Models.csproj">
+      <Project>{5158cc96-834f-4bb7-a3cf-90159af80cda}</Project>
+      <Name>CrossOver.DataLayer.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
