@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MongoDB.Driver;
 using System.Configuration;
+using System.Web.Configuration;
 
 namespace CrossOver.DataAccessLayer.DBModel
 {
@@ -20,6 +21,11 @@ namespace CrossOver.DataAccessLayer.DBModel
             //{
             //    return;
             //}
+            string userName = WebConfigurationManager.AppSettings["MongoDBConectionString"];
+            if (userName == null)
+            {
+                Console.WriteLine("BAAL");
+            }
             var client=new MongoClient("mongodb://localhost:27017");
             var db = client.GetDatabase("Crossover");
             Database = db;
