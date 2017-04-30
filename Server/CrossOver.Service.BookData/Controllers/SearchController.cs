@@ -9,8 +9,7 @@ namespace CrossOver.Service.BookData.Controllers
 
     public class SearchController : ApiController
     {
-        private static DBUnitOfWork db = new DBUnitOfWork();
-        private IBookDatarepository _bookDatarepository;
+        private readonly IBookDatarepository _bookDatarepository;
 
         public SearchController(IBookDatarepository bookDatarepository)
         {
