@@ -21,6 +21,7 @@ namespace CrossOver.DataAccessLayer.DBModel
             //{
             //    return;
             //}
+            //var kernel = new StandardKernel();
             string userName = WebConfigurationManager.AppSettings["MongoDBConectionString"];
             if (userName == null)
             {
