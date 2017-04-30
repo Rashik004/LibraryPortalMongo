@@ -5,10 +5,14 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
+using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CrossOver.BusinessLayer.Repositories.Repository;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CrossOver.LibraryPortal.Models;
+using CrossOver.DataAccessLayer.DBModel;
 
 namespace CrossOver.LibraryPortal.Controllers
 {
@@ -17,9 +21,11 @@ namespace CrossOver.LibraryPortal.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly IAuthenticationRepository _authenticationRepository;
 
         public AccountController()
         {
+            _authenticationRepository=new AuthenticationRepository();
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -73,22 +79,28 @@ namespace CrossOver.LibraryPortal.Controllers
                 return View(model);
             }
 
-            // This doesn't count login failures towards account lockout
-            // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
+            User user = new User() { Username = model.Email, Password = model.Password };
+
+            user = _authenticationRepository.GetUserDetails(user);
+
+            if (user != null)
             {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
+                FormsAuthentication.SetAuthCookie(model.Email, false);
+
+                var authTicket = new FormsAuthenticationTicket(1, user.Username, DateTime.Now,
+                    DateTime.Now.AddMinutes(20), false, "user");
+                string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
+                var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                HttpContext.Response.Cookies.Add(authCookie);
+                return RedirectToAction("Index", "Home");
             }
+
+            else
+            {
+                ModelState.AddModelError("", "Invalid login attempt.");
+                return View(model);
+            }
+            throw new AppDomainUnloadedException();
         }
 
         //
@@ -391,7 +403,7 @@ namespace CrossOver.LibraryPortal.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult LogOff()
         {
-            AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
 

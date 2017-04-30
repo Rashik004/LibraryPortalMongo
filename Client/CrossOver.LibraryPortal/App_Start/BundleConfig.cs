@@ -21,11 +21,18 @@ namespace CrossOver.LibraryPortal
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js",
+                      "~/Scripts/bootstrap-table.js",
+                      "~/Scripts/DataTables/jquery.dataTables.js",
+                      //"~/Scripts/dataTables.bootstrap4.js",
+                      "~/Scripts/Custom.js",
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap-table.css",
+                      "~/Content/site.css",
+                      "~/Content/jquery.dataTables.css"
+                      ));
         }
     }
 }
