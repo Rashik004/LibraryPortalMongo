@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.LibraryPortal", "..\Client\CrossOver.LibraryPortal\CrossOver.LibraryPortal.csproj", "{E65EF815-F865-4223-B352-CF0F778695AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.DataAccessLayer.DBModel", "..\Common\Models\CrossOver.CodeLibrary.DataLayer\CrossOver.DataAccessLayer.DBModel.csproj", "{3C848702-42CA-46B2-A325-5EEB67CDE8A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.BusinessLayer.Repositories", "..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CrossOver.BusinessLayer.Repositories.csproj", "{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E65EF815-F865-4223-B352-CF0F778695AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E65EF815-F865-4223-B352-CF0F778695AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E65EF815-F865-4223-B352-CF0F778695AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E65EF815-F865-4223-B352-CF0F778695AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C848702-42CA-46B2-A325-5EEB67CDE8A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C848702-42CA-46B2-A325-5EEB67CDE8A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C848702-42CA-46B2-A325-5EEB67CDE8A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C848702-42CA-46B2-A325-5EEB67CDE8A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
