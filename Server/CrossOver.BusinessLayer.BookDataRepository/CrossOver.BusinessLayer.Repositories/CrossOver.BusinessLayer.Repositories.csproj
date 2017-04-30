@@ -56,8 +56,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAuthenticationRepository.cs" />
     <Compile Include="Interfaces\IBookDatarepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AuthenticationRepository.cs" />
     <Compile Include="Repository\BookDatarepository.cs" />
   </ItemGroup>
   <ItemGroup>
