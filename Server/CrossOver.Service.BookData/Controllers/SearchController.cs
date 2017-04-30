@@ -1,12 +1,8 @@
 ﻿using CrossOver.DataAccessLayer.DBModel;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using CrossOver.BusinessLayer.Repositories.Interfaces;
-using MongoDB.Driver;
 
 namespace CrossOver.Service.BookData.Controllers
 {
@@ -27,10 +23,5 @@ namespace CrossOver.Service.BookData.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, searchResult);
         }
 
-        //public HttpResponseMessage Get(int id)
-
-        //{
-        //    return Request.CreateResponse(HttpStatusCode.NotFound);
-        //}
     }
 }
