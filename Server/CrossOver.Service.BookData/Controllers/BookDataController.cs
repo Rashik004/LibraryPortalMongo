@@ -17,20 +17,20 @@ namespace CrossOver.Service.BookData.Controllers
         private static DBUnitOfWork db = new DBUnitOfWork();
         private IBookDatarepository _bookDatarepository;
 
-        public BookDataController(/*IBookDatarepository bookDatarepository*/)
+        public BookDataController(IBookDatarepository bookDatarepository)
         {
-            //_bookDatarepository = bookDatarepository;
+            _bookDatarepository = bookDatarepository;
         }
         public HttpResponseMessage Get()
         {
 
-            var allBooks = db.Books
-                .Find(book => true)
-                .SortBy(b => b.Title)
-                .Limit(13)
-                .ToListAsync()
-                .Result;
-            //var allBooks = _bookDatarepository.GetAllBooks();
+            //var allBooks = db.Books
+            //    .Find(book => true)
+            //    .SortBy(b => b.Title)
+            //    .Limit(13)
+            //    .ToListAsync()
+            //    .Result;
+            var allBooks = _bookDatarepository.GetAllBooks();
             return Request.CreateResponse(HttpStatusCode.OK, allBooks);
 
         }
