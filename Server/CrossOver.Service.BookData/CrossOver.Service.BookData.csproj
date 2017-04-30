@@ -167,6 +167,10 @@
       <Project>{5158cc96-834f-4bb7-a3cf-90159af80cda}</Project>
       <Name>CrossOver.DataLayer.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CrossOver.BusinessLayer.Repositories.csproj">
+      <Project>{dec78b9c-2eff-49b4-8115-4eb399c8c06f}</Project>
+      <Name>CrossOver.BusinessLayer.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

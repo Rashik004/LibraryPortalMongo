@@ -12,7 +12,7 @@ namespace CrossOver.Service.BookData.Controllers
 
     public class SearchController : ApiController
     {
-        private static CrossOverDBUnitOfWork db = new CrossOverDBUnitOfWork();
+        private static DBUnitOfWork db = new DBUnitOfWork();
 
         public HttpResponseMessage Get(string id)
         {

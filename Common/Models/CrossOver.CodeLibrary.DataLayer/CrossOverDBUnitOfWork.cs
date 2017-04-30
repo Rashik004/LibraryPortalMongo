@@ -9,13 +9,13 @@ using System.Web.Configuration;
 
 namespace CrossOver.DataAccessLayer.DBModel
 {
-    public class CrossOverDBUnitOfWork
+    public class DBUnitOfWork
     {
         public IMongoDatabase Database;
         public IMongoCollection<Book> Books;
         public IMongoCollection<User> Users; 
 
-        public CrossOverDBUnitOfWork()
+        public DBUnitOfWork()
         {
             //if (_database != null)
             //{
