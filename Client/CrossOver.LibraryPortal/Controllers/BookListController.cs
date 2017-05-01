@@ -17,31 +17,31 @@ namespace CrossOver.LibraryPortal.Controllers
     {
         // GET: BookList
         private readonly DBUnitOfWork _db;
+        private readonly HttpClient _bookDataClient;
 
         public BookListController()
         {
             _db=new DBUnitOfWork();
+
+            //_bookDataClient = new HttpClient() {BaseAddress = new Uri("http://localhost:8084/api/") };
+            //_bookDataClient.DefaultRequestHeaders.Clear();
+            //_bookDataClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<ActionResult> Index()
         {
             var Baseurl = "http://localhost:8084/api/";
             var bookList = new List<Book>();
-            using (var client = new HttpClient())
+            //using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri(Baseurl);
-
-                client.DefaultRequestHeaders.Clear();
-                //Define request data format  
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                var client = ClientProcessor(Baseurl);
                 HttpResponseMessage res = await client.GetAsync("bookdata");
-                //client.PutAsync();
                 if (res.IsSuccessStatusCode)
                 {
                     var bookresponse = res.Content.ReadAsStringAsync().Result;
                     bookList = JsonConvert.DeserializeObject<List<Book>>(bookresponse);
                 }
-
+                client.Dispose();
             }
             return View(bookList);
         }
@@ -116,6 +116,15 @@ namespace CrossOver.LibraryPortal.Controllers
             {
                 return View();
             }
+        }
+
+        public HttpClient ClientProcessor(string baseUri)
+        {
+            var client=new HttpClient();
+            client.DefaultRequestHeaders.Clear();
+            client.BaseAddress=new Uri(baseUri);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            return client;
         }
     }
 }
