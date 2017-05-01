@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.DataLayer.Models"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.BusinessLayer.Repositories", "..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CrossOver.BusinessLayer.Repositories.csproj", "{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.Services.ManageDemand", "..\Server\CrossOver.Services.ManageDemand\CrossOver.Services.ManageDemand.csproj", "{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
