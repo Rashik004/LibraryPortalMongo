@@ -1,3 +1,8 @@
+using System.Web.Http;
+using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CrossOver.BusinessLayer.Repositories.Repository;
+using Ninject.Web.WebApi;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(CrossOver.Services.ManageDemand.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(CrossOver.Services.ManageDemand.App_Start.NinjectWebCommon), "Stop")]
 
@@ -44,8 +49,11 @@ namespace CrossOver.Services.ManageDemand.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+                kernel.Bind<IBookDatarepository>().To<BookDatarepository>();
 
                 RegisterServices(kernel);
+                GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+
                 return kernel;
             }
             catch
