@@ -25,7 +25,7 @@ namespace CrossOver.LibraryPortal.Controllers
 
         public async Task<ActionResult> Index()
         {
-            var Baseurl = "http://localhost:8084/";
+            var Baseurl = "http://localhost:8084/api/";
             var bookList = new List<Book>();
             using (var client = new HttpClient())
             {
@@ -34,8 +34,9 @@ namespace CrossOver.LibraryPortal.Controllers
                 client.DefaultRequestHeaders.Clear();
                 //Define request data format  
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                HttpResponseMessage res = await client.GetAsync("api/bookdata");
-                //if (res.IsSuccessStatusCode)
+                HttpResponseMessage res = await client.GetAsync("bookdata");
+                //client.PutAsync();
+                if (res.IsSuccessStatusCode)
                 {
                     var bookresponse = res.Content.ReadAsStringAsync().Result;
                     bookList = JsonConvert.DeserializeObject<List<Book>>(bookresponse);

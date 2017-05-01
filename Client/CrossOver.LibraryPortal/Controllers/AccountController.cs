@@ -89,8 +89,21 @@ namespace CrossOver.LibraryPortal.Controllers
 
                 var authTicket = new FormsAuthenticationTicket(1, user.Username, DateTime.Now,
                     DateTime.Now.AddMinutes(20), false, "user");
+                //var etc=new FormsAuthenticationTicket();
                 string encryptedTicket = FormsAuthentication.Encrypt(authTicket);
                 var authCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encryptedTicket);
+                var userIdString = user.Id.ToString();
+                Session["userId"] =
+                    userIdString;
+                try
+                {
+                    UserManager.AddToRole(userIdString, "user");
+                }
+                catch (Exception ex)
+                {
+                    
+                }
+                
                 HttpContext.Response.Cookies.Add(authCookie);
                 return RedirectToAction("Index", "Home");
             }

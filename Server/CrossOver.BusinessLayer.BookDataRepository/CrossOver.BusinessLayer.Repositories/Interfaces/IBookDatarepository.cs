@@ -12,5 +12,6 @@ namespace CrossOver.BusinessLayer.Repositories.Interfaces
         IList<Book> GetAllBooks();
 
         IList<Book> SearchBook(string searchString);
+        void AddUser( /*User user*/);
     }
 }

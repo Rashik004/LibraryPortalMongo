@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace CrossOver.LibraryPortal.Controllers
 {
@@ -18,7 +19,11 @@ namespace CrossOver.LibraryPortal.Controllers
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
-
+            var test =User.Identity.GetUserId();
+            if (test != null)
+            {
+                
+            }
             return View();
         }
 

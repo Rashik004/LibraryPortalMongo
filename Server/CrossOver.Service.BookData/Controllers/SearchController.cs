@@ -19,7 +19,9 @@ namespace CrossOver.Service.BookData.Controllers
         public HttpResponseMessage Get(string id)
         {
             var searchResult = _bookDatarepository.SearchBook(id);
+            _bookDatarepository.AddUser();
             return Request.CreateResponse(HttpStatusCode.OK, searchResult);
+
         }
 
     }
