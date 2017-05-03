@@ -10,5 +10,9 @@ namespace CrossOver.BusinessLayer.Repositories.Interfaces
     public interface IAuthenticationRepository
     {
         User GetUserDetails(User user);
+
+        bool CreateUser(User user);
+
+        string GetUserId(string userName);
     }
 }

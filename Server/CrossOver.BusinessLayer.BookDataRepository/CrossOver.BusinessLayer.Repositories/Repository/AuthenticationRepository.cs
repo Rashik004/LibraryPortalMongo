@@ -25,5 +25,20 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
                 .FirstOrDefaultAsync().Result;
             return authenticatedUser;
         }
+
+        public bool CreateUser(User user)
+        {
+            if (GetUserId(user.Username) != null)
+                return false;
+            _db.Users.InsertOne(user);
+            return true;
+        }
+
+        public string GetUserId(string userName)
+        {
+            return _db.Users
+                .Find(u => u.Username == userName)
+                .FirstOrDefaultAsync().Result.Id.ToString();
+        }
     }
 }
