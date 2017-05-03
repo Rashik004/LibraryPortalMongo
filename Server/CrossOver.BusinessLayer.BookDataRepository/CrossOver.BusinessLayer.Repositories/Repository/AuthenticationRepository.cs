@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CrossOver.DataAccessLayer.DbContext;
 using CrossOver.DataAccessLayer.DBModel;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -12,11 +13,11 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
 {
     public class AuthenticationRepository:IAuthenticationRepository
     {
-        private readonly DBUnitOfWork _db;
+        private readonly DbContext _db;
 
         public AuthenticationRepository()
         {
-            _db=new DBUnitOfWork();
+            _db=new DbContext();
         }
 
         public User GetUserDetails(User user)

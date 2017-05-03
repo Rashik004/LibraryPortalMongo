@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
@@ -24,7 +22,6 @@ namespace CrossOver.Services.ManageDemand.Controllers
         [Route("listdemand/user/{userId}")]
         public HttpResponseMessage Get(string userId)
         {
-            //_manageOrderRepository.PlaceOrder(userId,bookId);
             try
             {
                 var bookList = _manageOrderRepository.ListOrders(userId);

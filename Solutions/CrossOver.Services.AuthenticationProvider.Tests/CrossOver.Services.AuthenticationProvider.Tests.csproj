@@ -52,12 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Server\CrossOver.Services.AuthenticationProvider\CrossOver.Services.AuthenticationProvider.csproj">
-      <Project>{1708CD64-4220-4D0D-B416-96823716232A}</Project>
-      <Name>CrossOver.Services.AuthenticationProvider</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

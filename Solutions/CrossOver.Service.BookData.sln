@@ -13,10 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.BusinessLayer.Rep
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.Services.ManageDemand", "..\Server\CrossOver.Services.ManageDemand\CrossOver.Services.ManageDemand.csproj", "{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.Services.AuthenticationProvider", "..\Server\CrossOver.Services.AuthenticationProvider\CrossOver.Services.AuthenticationProvider.csproj", "{1708CD64-4220-4D0D-B416-96823716232A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.Services.AuthenticationProvider.Tests", "CrossOver.Services.AuthenticationProvider.Tests\CrossOver.Services.AuthenticationProvider.Tests.csproj", "{51223ABC-543C-4C55-B029-808FAC7022C7}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,14 +39,6 @@ Global
 		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CB4F4FD-6F97-41D7-9EE1-ED00066887CE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{1708CD64-4220-4D0D-B416-96823716232A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1708CD64-4220-4D0D-B416-96823716232A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1708CD64-4220-4D0D-B416-96823716232A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1708CD64-4220-4D0D-B416-96823716232A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{51223ABC-543C-4C55-B029-808FAC7022C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{51223ABC-543C-4C55-B029-808FAC7022C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{51223ABC-543C-4C55-B029-808FAC7022C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{51223ABC-543C-4C55-B029-808FAC7022C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,21 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CrossOver.DataAccessLayer.DBModel;
 using MongoDB.Driver;
-using System.Configuration;
-using System.Web.Configuration;
 
-namespace CrossOver.DataAccessLayer.DBModel
+namespace CrossOver.DataAccessLayer.DbContext
 {
-    public class DBUnitOfWork
+    public class DbContext
     {
         public IMongoDatabase Database;
         public IMongoCollection<Book> Books;
         public IMongoCollection<User> Users; 
 
-        public DBUnitOfWork()
+        public DbContext()
         {
             //if (_database != null)
             //{

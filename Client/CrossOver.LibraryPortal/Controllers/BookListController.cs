@@ -43,5 +43,10 @@ namespace CrossOver.LibraryPortal.Controllers
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             return client;
         }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            RedirectToAction("Error", "Home");
+        }
     }
 }

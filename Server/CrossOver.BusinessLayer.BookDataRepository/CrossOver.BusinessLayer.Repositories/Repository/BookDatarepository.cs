@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CrossOver.DataAccessLayer.DbContext;
 using CrossOver.DataAccessLayer.DBModel;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -12,11 +13,12 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
 {
     public class BookDatarepository: IBookDatarepository
     {
-        private DBUnitOfWork _db;
+        private readonly DbContext _db;
         public BookDatarepository()
         {
-            _db = new DBUnitOfWork();
+            _db = new DbContext();
         }
+
         public IList<Book> GetAllBooks()
         {
             return _db.Books
@@ -25,35 +27,6 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
                 .ToListAsync()
                 .Result;
         }
-
-        //public IList<Book> GetBookAndUserData(string userId)
-        //{
-            
-        //}
-
-        public IList<Book> SearchBook(string searchString)
-        {
-            return _db.Books
-                .Find(book => book.Title.StartsWith(searchString) || book.Publisher.StartsWith(searchString))
-                .ToListAsync().Result;
-        }
-
-        public void AddUser( /*User user*/)
-        {
-            try
-            {
-                var user = new User()
-                {
-                    Password = "test",
-                    Username = "test"
-                };
-                user.Id = ObjectId.GenerateNewId();
-                _db.Users.InsertOneAsync(user);
-            }
-            catch (Exception ex)
-            {
-
-            }
-        }
+       
     }
 }

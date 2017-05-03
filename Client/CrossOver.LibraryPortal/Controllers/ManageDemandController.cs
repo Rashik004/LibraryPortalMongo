@@ -8,6 +8,7 @@ using MongoDB.Bson;
 using System.Collections;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using CrossOver.DataAccessLayer.DbContext;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 
@@ -17,13 +18,12 @@ namespace CrossOver.LibraryPortal.Controllers
     {
         private readonly string _baseUrl;
         // GET: ManageDemand
-        private readonly DBUnitOfWork _db;
         private readonly string _placeDemandUriFormat = "placedemand/user/{0}/book/{1}";
         private readonly string _listDemandUriFormat = "listdemand/user/{0}";
         private readonly string _deleteDemandUriFormat = "deletedemand/user/{0}/book/{1}";
-        public ManageDemandController(/*DBUnitOfWork db*/)
+
+        public ManageDemandController()
         {
-            _db = new DBUnitOfWork();
             _baseUrl = "http://localhost:8085/";
         }
         public async System.Threading.Tasks.Task<ActionResult> Index()
@@ -43,11 +43,8 @@ namespace CrossOver.LibraryPortal.Controllers
         {
 
             var client = ClientProcessor();
-            var result = await client.PostAsync(String.Format(_placeDemandUriFormat, userId, bookId), null);
-            if (result.IsSuccessStatusCode)
-            {
-                System.Console.WriteLine("asd");
-            }
+            await client.PostAsync(String.Format(_placeDemandUriFormat, userId, bookId), null);
+            
             return RedirectToAction("Index", "BookList");
         }
 
@@ -55,11 +52,8 @@ namespace CrossOver.LibraryPortal.Controllers
         {
 
             var client = ClientProcessor();
-            var result = await client.DeleteAsync(String.Format(_deleteDemandUriFormat, userId, bookId));
-            if (result.IsSuccessStatusCode)
-            {
-                System.Console.WriteLine("asd");
-            }
+            await client.DeleteAsync(String.Format(_deleteDemandUriFormat, userId, bookId));
+            
             return RedirectToAction("Index");
         }
 
@@ -70,6 +64,11 @@ namespace CrossOver.LibraryPortal.Controllers
             client.BaseAddress = new Uri(_baseUrl);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             return client;
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            RedirectToAction("Error", "Home");
         }
     }
 }

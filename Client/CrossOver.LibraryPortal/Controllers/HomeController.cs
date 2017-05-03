@@ -33,5 +33,15 @@ namespace CrossOver.LibraryPortal.Controllers
 
             return View();
         }
+
+        public ActionResult Error()
+        {
+            return View();
+        }
+
+        protected override void OnException(ExceptionContext filterContext)
+        {
+            RedirectToAction("Error", "Home");
+        }
     }
 }

@@ -10,8 +10,5 @@ namespace CrossOver.BusinessLayer.Repositories.Interfaces
     public interface IBookDatarepository
     {
         IList<Book> GetAllBooks();
-        //IList<Book> GetBookAndUserData(string userId);
-        IList<Book> SearchBook(string searchString);
-        void AddUser( /*User user*/);
     }
 }
