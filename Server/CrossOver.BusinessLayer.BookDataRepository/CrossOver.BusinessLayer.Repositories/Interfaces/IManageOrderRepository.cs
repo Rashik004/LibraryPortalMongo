@@ -7,11 +7,10 @@ using CrossOver.DataAccessLayer.DBModel;
 
 namespace CrossOver.BusinessLayer.Repositories.Interfaces
 {
-    public interface IBookDatarepository
+    public interface IManageOrderRepository
     {
-        IList<Book> GetAllBooks();
-        //IList<Book> GetBookAndUserData(string userId);
-        IList<Book> SearchBook(string searchString);
-        void AddUser( /*User user*/);
+        Task<User> PlaceOrder(string userId, string bookId);
+        Task<User> DeleteOrder(string userId, string bookId);
+        IList<Book> ListOrders(string userId);
     }
 }

@@ -1,0 +1,80 @@
+﻿@model IEnumerable<CrossOver.DataAccessLayer.DBModel.Book>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Add New Employee", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="row table-responsive">
+        <table id="datatable" class="table table-striped table-bordered" data-pattern="priority-columns">
+            <thead>
+                <tr>
+                    <th data-field="AppName">
+                        Title
+                    </th>
+                    <th>
+                        Publisher
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Authors
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Title)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Publisher)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </td>
+                        <td>
+                            <div>
+                                <ul>
+                                    @foreach (var author in item.Authors)
+                                    {
+                                        <li>
+                                            @author
+                                        </li>
+                                    }
+                                </ul>
+                            </div>
+
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("Delete Demand",
+                           "DeleteDemand",
+                           new
+                           {
+                               userId = Session["userId"],
+                               bookId = item.Id
+                           },
+                           new { @class = "btn btn-info btn-xs" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

@@ -19,5 +19,10 @@ namespace CrossOver.Service.BookData.Controllers
             return Request.CreateResponse(HttpStatusCode.OK, allBooks);
         }
 
+        //public HttpResponseMessage GetBookDetailsBy(string userId)
+        //{
+            
+        //}
+
     }
 }

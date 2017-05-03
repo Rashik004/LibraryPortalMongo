@@ -22,10 +22,14 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
             return _db.Books
                 .Find(book => true)
                 .SortBy(b => b.Title)
-                .Limit(13)
                 .ToListAsync()
                 .Result;
         }
+
+        //public IList<Book> GetBookAndUserData(string userId)
+        //{
+            
+        //}
 
         public IList<Book> SearchBook(string searchString)
         {

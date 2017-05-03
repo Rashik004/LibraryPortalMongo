@@ -58,9 +58,11 @@
   <ItemGroup>
     <Compile Include="Interfaces\IAuthenticationRepository.cs" />
     <Compile Include="Interfaces\IBookDatarepository.cs" />
+    <Compile Include="Interfaces\IManageOrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\AuthenticationRepository.cs" />
     <Compile Include="Repository\BookDatarepository.cs" />
+    <Compile Include="Repository\ManageOrderRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Models\CrossOver.CodeLibrary.DataLayer\CrossOver.DataAccessLayer.DBModel.csproj">

@@ -50,6 +50,7 @@ namespace CrossOver.Services.ManageDemand.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 kernel.Bind<IBookDatarepository>().To<BookDatarepository>();
+                kernel.Bind<IManageOrderRepository>().To<ManageOrderRepository>();
 
                 RegisterServices(kernel);
                 GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
