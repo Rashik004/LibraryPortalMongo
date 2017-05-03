@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CrossOver.BusinessLayer.Repositories.Interfaces;
 using CrossOver.DataAccessLayer.DBModel;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace CrossOver.BusinessLayer.Repositories.Repository
@@ -30,15 +31,17 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
         {
             if (GetUserId(user.Username) != null)
                 return false;
+            user.Id = ObjectId.GenerateNewId();
             _db.Users.InsertOne(user);
             return true;
         }
 
         public string GetUserId(string userName)
         {
-            return _db.Users
+            var user = _db.Users
                 .Find(u => u.Username == userName)
-                .FirstOrDefaultAsync().Result.Id.ToString();
+                .FirstOrDefaultAsync().Result;
+            return user?.Id.ToString();
         }
     }
 }
