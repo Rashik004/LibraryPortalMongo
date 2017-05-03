@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using CrossOver.DataAccessLayer.DBModel;
 using Newtonsoft.Json;
@@ -14,11 +15,11 @@ namespace CrossOver.LibraryPortal.Controllers
         // GET: BookList
         public async Task<ActionResult> Index()
         {
-            var Baseurl = "http://localhost:8084/api/";
+            var baseurl = WebConfigurationManager.AppSettings["BookDataSvcBase"];
             var bookList = new List<Book>();
 
-            var client = ClientProcessor(Baseurl);
-            HttpResponseMessage res = await client.GetAsync("bookdata");
+            var client = ClientProcessor(baseurl);
+            var res = await client.GetAsync("bookdata");
             if (res.IsSuccessStatusCode)
             {
                 var bookresponse = res.Content.ReadAsStringAsync().Result;

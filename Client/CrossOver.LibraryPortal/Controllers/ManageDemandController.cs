@@ -8,7 +8,11 @@ using MongoDB.Bson;
 using System.Collections;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Web.Configuration;
+using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CrossOver.BusinessLayer.Repositories.Repository;
 using CrossOver.DataAccessLayer.DbContext;
+using Microsoft.AspNet.Identity;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 
@@ -21,15 +25,20 @@ namespace CrossOver.LibraryPortal.Controllers
         private readonly string _placeDemandUriFormat = "placedemand/user/{0}/book/{1}";
         private readonly string _listDemandUriFormat = "listdemand/user/{0}";
         private readonly string _deleteDemandUriFormat = "deletedemand/user/{0}/book/{1}";
+        private readonly IAuthenticationRepository _authenticationRepository;
 
         public ManageDemandController()
         {
-            _baseUrl = "http://localhost:8085/";
+            _baseUrl = WebConfigurationManager.AppSettings["ManageDemandSvcBase"];
+            _authenticationRepository=new AuthenticationRepository();
         }
         public async System.Threading.Tasks.Task<ActionResult> Index()
         {
             var client = ClientProcessor();
-            var result = await client.GetAsync(String.Format(_listDemandUriFormat, Session["userId"]));
+            var result =
+                await
+                    client.GetAsync(String.Format(_listDemandUriFormat,
+                        _authenticationRepository.GetUserId(User.Identity.GetUserName())));
             if (result.IsSuccessStatusCode)
             {
                 var bookresponse = result.Content.ReadAsStringAsync().Result;
@@ -39,11 +48,11 @@ namespace CrossOver.LibraryPortal.Controllers
             return View(new List<Book>());
         }
 
-        public async System.Threading.Tasks.Task<ActionResult> PlaceDemand(string userId, string bookId)
+        public async System.Threading.Tasks.Task<ActionResult> PlaceDemand( string bookId)
         {
-
+            var userId = _authenticationRepository.GetUserId(User.Identity.GetUserName());
             var client = ClientProcessor();
-            await client.PostAsync(String.Format(_placeDemandUriFormat, userId, bookId), null);
+            var result=await client.PostAsync(String.Format(_placeDemandUriFormat, userId, bookId), null);
             
             return RedirectToAction("Index", "BookList");
         }

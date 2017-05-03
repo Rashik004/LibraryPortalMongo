@@ -33,6 +33,7 @@ namespace CrossOver.BusinessLayer.Repositories.Repository
             if (GetUserId(user.Username) != null)
                 return false;
             user.Id = ObjectId.GenerateNewId();
+            user.Books=new ObjectId[0];
             _db.Users.InsertOne(user);
             return true;
         }
