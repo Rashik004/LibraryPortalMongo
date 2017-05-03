@@ -1,4 +1,5 @@
-﻿using CrossOver.DataAccessLayer.DBModel;
+﻿using System.Web.Configuration;
+using CrossOver.DataAccessLayer.DBModel;
 using MongoDB.Driver;
 
 namespace CrossOver.DataAccessLayer.DbContext
@@ -11,18 +12,10 @@ namespace CrossOver.DataAccessLayer.DbContext
 
         public DbContext()
         {
-            //if (_database != null)
-            //{
-            //    return;
-            //}
-            //var kernel = new StandardKernel();
-            //string userName = WebConfigurationManager.AppSettings["MongoDBConectionString"];
-            //if (userName == null)
-            //{
-            //    Console.WriteLine("BAAL");
-            //}
-            var client=new MongoClient("mongodb://localhost:27017");
-            var db = client.GetDatabase("Crossover");
+            var connectionString = WebConfigurationManager.AppSettings["MongoDBConectionString"];
+            var mongoUrl = new MongoUrl(connectionString);
+            var client = new MongoClient(mongoUrl);
+            var db = client.GetDatabase(mongoUrl.DatabaseName);
             Database = db;
             Books = db.GetCollection<Book>("Book");
             Users = db.GetCollection<User>("User");
