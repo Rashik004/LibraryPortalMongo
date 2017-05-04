@@ -18,6 +18,7 @@ using Newtonsoft.Json;
 
 namespace CrossOver.LibraryPortal.Controllers
 {
+    [Authorize]
     public class ManageDemandController : Controller
     {
         private readonly string _baseUrl;

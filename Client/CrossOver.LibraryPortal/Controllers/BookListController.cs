@@ -10,6 +10,7 @@ using Newtonsoft.Json;
 
 namespace CrossOver.LibraryPortal.Controllers
 {
+    [Authorize]
     public class BookListController : Controller
     {
         // GET: BookList
