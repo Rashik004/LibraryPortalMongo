@@ -1,8 +1,8 @@
 ﻿using System.Web.Configuration;
-using CrossOver.DataAccessLayer.DBModel;
+using CompanyName.DataLayer.Models.Models;
 using MongoDB.Driver;
 
-namespace CrossOver.DataAccessLayer.DbContext
+namespace CompanyName.DataAccessLayer.DbContext
 {
     public class DbContext
     {

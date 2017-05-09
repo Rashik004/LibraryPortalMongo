@@ -7,8 +7,8 @@
     <ProjectGuid>{2A02E3FA-9D41-44D1-9691-1809DBFC6B6E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CrossOver.ClientManager</RootNamespace>
-    <AssemblyName>CrossOver.ClientManager</AssemblyName>
+    <RootNamespace>CompanyName.ClientManager</RootNamespace>
+    <AssemblyName>CompanyName.ClientManager</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

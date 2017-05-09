@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Net;
 using System.Net.Http;
-using System.Web.Http;
 using System.Threading.Tasks;
-using CrossOver.BusinessLayer.Repositories.Interfaces;
+using System.Web.Http;
+using CompanyName.BusinessLayer.Repositories.Interfaces;
 
-namespace CrossOver.Services.ManageDemand.Controllers
+namespace CompanyName.Services.ManageDemand.Controllers
 {
     public class ManageDemandController : ApiController
     {
@@ -18,7 +18,7 @@ namespace CrossOver.Services.ManageDemand.Controllers
             _manageOrderRepository = manageOrderRepository;
         }
 
-        [HttpGet]
+       // [HttpGet]
         [Route("listdemand/user/{userId}")]
         public HttpResponseMessage Get(string userId)
         {

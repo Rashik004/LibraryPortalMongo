@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using CrossOver.DataAccessLayer.DBModel;
+using CompanyName.DataLayer.Models.Models;
 
-namespace CrossOver.BusinessLayer.Repositories.Interfaces
+namespace CompanyName.BusinessLayer.Repositories.Interfaces
 {
     public interface IManageOrderRepository
     {

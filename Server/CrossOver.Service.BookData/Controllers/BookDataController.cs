@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using CrossOver.BusinessLayer.Repositories.Interfaces;
+using CompanyName.BusinessLayer.Repositories.Interfaces;
 
-namespace CrossOver.Service.BookData.Controllers
+namespace CompanyName.Service.BookData.Controllers
 {
     public class BookDataController : ApiController
     {

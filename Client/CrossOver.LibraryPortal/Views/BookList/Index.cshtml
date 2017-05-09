@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CrossOver.DataAccessLayer.DBModel.Book> 
+﻿@model List<CompanyName.DataLayer.Models.Models.Book>
 @{
     ViewBag.Title = "Index";
 }
@@ -60,12 +60,10 @@
                         <td>
                             @Html.ActionLink("Demand Book",
                            "PlaceDemand",
-                           "ManageDemand",
-                           new
+                           "ManageDemand", routeValues: new
                            {
                                bookId = item.Id
-                           },
-                           new { @class = "btn btn-info btn-xs" })
+                           }, htmlAttributes: new { @class = "btn btn-info btn-xs" })
                         </td>
                     </tr>
                 }

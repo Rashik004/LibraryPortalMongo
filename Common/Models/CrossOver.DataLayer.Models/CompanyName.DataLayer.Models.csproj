@@ -7,8 +7,8 @@
     <ProjectGuid>{5158CC96-834F-4BB7-A3CF-90159AF80CDA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CrossOver.DataLayer.Models</RootNamespace>
-    <AssemblyName>CrossOver.DataLayer.Models</AssemblyName>
+    <RootNamespace>CompanyName.DataLayer.Models</RootNamespace>
+    <AssemblyName>CompanyName.DataLayer.Models</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.LibraryPortal", "..\Client\CrossOver.LibraryPortal\CrossOver.LibraryPortal.csproj", "{E65EF815-F865-4223-B352-CF0F778695AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyName.LibraryPortal", "..\Client\CrossOver.LibraryPortal\CompanyName.LibraryPortal.csproj", "{E65EF815-F865-4223-B352-CF0F778695AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.DataAccessLayer.DBModel", "..\Common\Models\CrossOver.CodeLibrary.DataLayer\CrossOver.DataAccessLayer.DBModel.csproj", "{3C848702-42CA-46B2-A325-5EEB67CDE8A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyName.DataAccessLayer.DBModel", "..\Common\Models\CrossOver.CodeLibrary.DataLayer\CompanyName.DataAccessLayer.DBModel.csproj", "{3C848702-42CA-46B2-A325-5EEB67CDE8A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.BusinessLayer.Repositories", "..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CrossOver.BusinessLayer.Repositories.csproj", "{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyName.BusinessLayer.Repositories", "..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CompanyName.BusinessLayer.Repositories.csproj", "{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.DataLayer.Models", "..\Common\Models\CrossOver.DataLayer.Models\CrossOver.DataLayer.Models.csproj", "{5158CC96-834F-4BB7-A3CF-90159AF80CDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyName.DataLayer.Models", "..\Common\Models\CrossOver.DataLayer.Models\CompanyName.DataLayer.Models.csproj", "{5158CC96-834F-4BB7-A3CF-90159AF80CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossOver.ClientManager", "CrossOver.ClientManager\CrossOver.ClientManager.csproj", "{2A02E3FA-9D41-44D1-9691-1809DBFC6B6E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompanyName.ClientManager", "CrossOver.ClientManager\CompanyName.ClientManager.csproj", "{2A02E3FA-9D41-44D1-9691-1809DBFC6B6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

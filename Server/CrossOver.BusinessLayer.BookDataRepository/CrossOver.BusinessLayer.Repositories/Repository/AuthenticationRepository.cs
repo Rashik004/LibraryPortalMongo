@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossOver.BusinessLayer.Repositories.Interfaces;
-using CrossOver.DataAccessLayer.DbContext;
-using CrossOver.DataAccessLayer.DBModel;
+﻿using CompanyName.BusinessLayer.Repositories.Interfaces;
+using CompanyName.DataAccessLayer.DbContext;
+using CompanyName.DataLayer.Models.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace CrossOver.BusinessLayer.Repositories.Repository
+namespace CompanyName.BusinessLayer.Repositories.Repository
 {
     public class AuthenticationRepository:IAuthenticationRepository
     {

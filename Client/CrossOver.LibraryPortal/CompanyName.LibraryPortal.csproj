@@ -600,13 +600,17 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\Models\CrossOver.CodeLibrary.DataLayer\CrossOver.DataAccessLayer.DBModel.csproj">
+    <ProjectReference Include="..\..\Common\Models\CrossOver.CodeLibrary.DataLayer\CompanyName.DataAccessLayer.DBModel.csproj">
       <Project>{3c848702-42ca-46b2-a325-5eeb67cde8a9}</Project>
-      <Name>CrossOver.DataAccessLayer.DBModel</Name>
+      <Name>CompanyName.DataAccessLayer.DBModel</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CrossOver.BusinessLayer.Repositories.csproj">
+    <ProjectReference Include="..\..\Common\Models\CrossOver.DataLayer.Models\CompanyName.DataLayer.Models.csproj">
+      <Project>{5158cc96-834f-4bb7-a3cf-90159af80cda}</Project>
+      <Name>CompanyName.DataLayer.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Server\CrossOver.BusinessLayer.BookDataRepository\CrossOver.BusinessLayer.Repositories\CompanyName.BusinessLayer.Repositories.csproj">
       <Project>{DEC78B9C-2EFF-49B4-8115-4EB399C8C06F}</Project>
-      <Name>CrossOver.BusinessLayer.Repositories</Name>
+      <Name>CompanyName.BusinessLayer.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

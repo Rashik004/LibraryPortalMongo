@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="CrossOver.Services.ManageDemand.WebApiApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="CompanyName.Services.ManageDemand.WebApiApplication" Language="C#" %>

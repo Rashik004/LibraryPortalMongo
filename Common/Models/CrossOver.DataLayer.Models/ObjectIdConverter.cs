@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MongoDB.Bson;
 using Newtonsoft.Json;
 
-namespace CrossOver.DataLayer.Models
+namespace CompanyName.DataLayer.Models
 {
     public class ObjectIdConverter : JsonConverter
     {

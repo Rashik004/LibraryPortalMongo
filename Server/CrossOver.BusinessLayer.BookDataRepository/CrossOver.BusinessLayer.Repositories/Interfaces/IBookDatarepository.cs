@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CrossOver.DataAccessLayer.DBModel;
+﻿using System.Collections.Generic;
+using CompanyName.DataLayer.Models.Models;
 
-namespace CrossOver.BusinessLayer.Repositories.Interfaces
+namespace CompanyName.BusinessLayer.Repositories.Interfaces
 {
     public interface IBookDatarepository
     {

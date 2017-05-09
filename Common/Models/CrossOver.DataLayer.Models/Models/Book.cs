@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MongoDB.Bson;
-using Newtonsoft.Json;
-using System.Web.UI;
-using CrossOver.DataLayer.Models;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using Newtonsoft.Json;
 
-namespace CrossOver.DataAccessLayer.DBModel
+namespace CompanyName.DataLayer.Models.Models
 {
     [BsonIgnoreExtraElements]
     public class Book

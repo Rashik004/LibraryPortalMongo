@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using CrossOver.BusinessLayer.Repositories.Interfaces;
-using CrossOver.BusinessLayer.Repositories.Repository;
+using CompanyName.BusinessLayer.Repositories.Interfaces;
+using CompanyName.BusinessLayer.Repositories.Repository;
+using CompanyName.DataLayer.Models.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CrossOver.LibraryPortal.Models;
-using CrossOver.DataAccessLayer.DBModel;
 
 namespace CrossOver.LibraryPortal.Controllers
 {

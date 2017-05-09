@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Web.Configuration;
 using System.Web.Mvc;
-using CrossOver.DataAccessLayer.DBModel;
+using CompanyName.DataLayer.Models.Models;
 using Newtonsoft.Json;
 
 namespace CrossOver.LibraryPortal.Controllers
